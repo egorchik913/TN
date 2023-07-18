@@ -4,22 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpftest3d"
-        xmlns:h="http://helix-toolkit.org/wpf"
-        xmlns:HelixToolkit="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
+        xmlns:Helix="http://helix-toolkit.org/wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
     <Window.Resources>
         <ResourceDictionary Source="Style.xaml"/>
     </Window.Resources>
     <Grid>
-        <Viewport3D x:Name="viewport">
-            <ModelVisual3D x:Name="Vis">
+        <Helix:HelixViewport3D x:Name="viewport">
+            <ModelVisual3D>
                 <ModelVisual3D.Content>
                     <DirectionalLight Color="White" Direction="5, -5, -2" />
                 </ModelVisual3D.Content>
             </ModelVisual3D>
             <ModelUIElement3D>
+                <GeometryModel3D>
+                    <GeometryModel3D.Material>
+                        <DiffuseMaterial>
+                            <DiffuseMaterial.Brush>
+                                <SolidColorBrush Color = "Green"/>
+                            </DiffuseMaterial.Brush>
+                        </DiffuseMaterial>
+                    </GeometryModel3D.Material>
+                </GeometryModel3D>
             </ModelUIElement3D>
-        </Viewport3D>
+        </Helix:HelixViewport3D>
     </Grid>
 </Window>
